@@ -1,0 +1,43 @@
+apply plugin: 'android'
+
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 19
+
+        def version = readVersion(file("VERSION"))
+        versionCode version.toVersionCode()
+        versionName version.toVersionName()
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(project.properties.storeFile)
+            storePassword project.properties.storePassword
+            keyAlias project.properties.storeAlias
+            keyPassword project.properties.keyPassword
+        }
+    }
+
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            packageNameSuffix '.debug'
+            versionNameSuffix '-debug'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+makeGrayscaleLauncherIcon(file("src/main"), "ic_launcher.png")
