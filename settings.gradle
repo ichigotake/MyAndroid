@@ -1,4 +1,4 @@
-include ':Application'
+include ':Application', ':Library'
 
 def setupDefaultProperties = { project ->
     String dir = project.projectDir.absolutePath
