@@ -18,4 +18,4 @@ MyProjects
 - [ichigotake/Android-LocalAreaJP](https://github.com/ichigotake/Android-LocalAreaJP)
 - [ichigotake/GradleSandbox](https://github.com/ichigotake/GradleSandbox)
 - [ichigotake/ColorfulSweets](https://github.com/ichigotake/ColorfulSweets)
-- [ichigotake/maven-local-deployer](https://github.com/ichigotake/maven-local-deployer)
+- [ichigotake/gradle-maven-local-deployer](https://github.com/ichigotake/gradle-maven-local-deployer)
